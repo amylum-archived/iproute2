@@ -1,4 +1,4 @@
-PACKAGE = iptables
+PACKAGE = iproute2
 ORG = amylum
 
 DEP_DIR = /tmp/dep-dir
