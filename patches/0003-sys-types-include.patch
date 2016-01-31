@@ -1,0 +1,13 @@
+diff --git a/include/iptables_common.h b/include/iptables_common.h
+index 9099667..2c27a4b 100644
+--- a/include/iptables_common.h
++++ b/include/iptables_common.h
+@@ -43,6 +43,8 @@ extern char *lib_dir;
+   extern void init_extensions(void);
+ #endif
+ 
++#include <sys/types.h>
++
+ #define __be32	u_int32_t
+ #define __le32	u_int32_t
+ #define __be16	u_int16_t
