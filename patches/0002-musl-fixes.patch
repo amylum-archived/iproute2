@@ -1,0 +1,12 @@
+diff --git a/lib/rt_names.c b/lib/rt_names.c
+index 1071a93..9669adb 100644
+--- a/lib/rt_names.c
++++ b/lib/rt_names.c
+@@ -21,6 +21,7 @@
+ 
+ #include <asm/types.h>
+ #include <linux/rtnetlink.h>
++#include <linux/limits.h>
+ 
+ #include "rt_names.h"
+ 

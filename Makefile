@@ -36,6 +36,7 @@ build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	patch -d $(BUILD_DIR) -p0 < patches/musl-fixes.patch
+	patch -d $(BUILD_DIR) -p1 < patches/0002-musl-fixes.patch
 	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && CFLAGS='$(CFLAGS)' make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp $(RELEASE_DIR)/usr/lib/charset.alias
