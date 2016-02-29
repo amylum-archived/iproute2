@@ -9,6 +9,7 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash
 CONF_FLAGS = 
 CFLAGS = -static -static-libgcc -Wl,-static -I$(DEP_DIR)/usr/include
+LDFLAGS = -static -static-libgcc -Wl,-static
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/v//')
 PATCH_VERSION = $$(cat version)
@@ -38,8 +39,8 @@ build: submodule deps
 	patch -d $(BUILD_DIR) -p0 < patches/musl-fixes.patch
 	patch -d $(BUILD_DIR) -p1 < patches/0002-musl-fixes.patch
 	patch -d $(BUILD_DIR) -p1 < patches/0003-sys-types-include.patch
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
-	cd $(BUILD_DIR) && CFLAGS='$(CFLAGS)' make DESTDIR=$(RELEASE_DIR) install
+	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS)' LDFLAGS='$(LDFLAGS)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CFLAGS='$(CFLAGS)' LDFLAGS='$(LDFLAGS)' make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp $(RELEASE_DIR)/usr/lib/charset.alias
 	mv $(RELEASE_DIR)/sbin $(RELEASE_DIR)/usr/bin
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
