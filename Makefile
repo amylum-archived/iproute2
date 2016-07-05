@@ -8,12 +8,18 @@ RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash
 CONF_FLAGS = 
-CFLAGS = -static -static-libgcc -Wl,-static -I$(DEP_DIR)/usr/include
-LDFLAGS = -static -static-libgcc -Wl,-static
+CFLAGS = -I$(DEP_DIR)/usr/include
+LDFLAGS =
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/v//')
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
+
+IPTABLES_VERSION = 1.6.0_10
+IPTABLES_URL = https://github.com/amylum/iptables/releases/download/$(IPTABLES_VERSION)/iptables.tar.gz
+IPTABLES_TAR = /tmp/iptables.tar.gz
+IPTABLES_DIR = /tmp/iptables
+IPTABLES_PATH = -I$(IPTABLES_DIR)/usr/include -L$(IPTABLES_DIR)/usr/lib
 
 .PHONY : default submodule deps manual container deps build version push local
 
@@ -32,6 +38,10 @@ deps:
 	rm -rf $(DEP_DIR)
 	mkdir -p $(DEP_DIR)/usr/include
 	cp -R /usr/include/{linux,asm,asm-generic} $(DEP_DIR)/usr/include/
+	rm -rf $(IPTABLES_DIR) $(IPTABLES_TAR)
+	mkdir $(IPTABLES_DIR)
+	curl -sLo $(IPTABLES_TAR) $(IPTABLES_URL)
+	tar -x -C $(IPTABLES_DIR) -f $(IPTABLES_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
