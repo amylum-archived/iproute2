@@ -15,7 +15,7 @@ PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/v//')
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-IPTABLES_VERSION = 1.6.0_10
+IPTABLES_VERSION = 1.6.0-10
 IPTABLES_URL = https://github.com/amylum/iptables/releases/download/$(IPTABLES_VERSION)/iptables.tar.gz
 IPTABLES_TAR = /tmp/iptables.tar.gz
 IPTABLES_DIR = /tmp/iptables
