@@ -1,0 +1,31 @@
+name 'iproute2'
+org 'amylum'
+
+licenses 'COPYING'
+
+deps(
+  iptables: '1.6.0-10',
+  'linux-api-headers': '4.8-rc6-2'
+)
+
+configure_flags(
+  prefix: '/usr'
+)
+
+cflags
+harden
+
+patch 'musl-fixes.patch'
+patch '0002-musl-fixes.patch'
+patch '0003-sys-types-include.patch'
+
+build do
+  configure
+  make
+  install
+  run "mv #{releasedir}/sbin #{releasedir}/usr/bin"
+end
+
+test do
+  # TODO: add tests
+end
