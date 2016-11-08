@@ -4,8 +4,8 @@ org 'amylum'
 licenses 'COPYING'
 
 deps(
-  iptables: '1.6.0-12',
-  'linux-api-headers': '4.9-rc3-2'
+  iptables: '1.6.0-13',
+  'linux-api-headers': '4.9-rc4-1'
 )
 
 configure_flags(
