@@ -4,7 +4,7 @@ org 'amylum'
 licenses 'COPYING'
 
 deps(
-  iptables: '1.6.0-18',
+  iptables: '1.6.1-1',
   'linux-api-headers': '4.9.6-1'
 )
 
