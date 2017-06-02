@@ -1,3 +1,43 @@
+diff --git a/bridge/link.c b/bridge/link.c
+index 93472ad3..ec2f67f2 100644
+--- a/bridge/link.c
++++ b/bridge/link.c
+@@ -6,7 +6,7 @@
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ #include <netinet/in.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_bridge.h>
+ #include <string.h>
+ #include <stdbool.h>
+diff --git a/examples/bpf/bpf_prog.c b/examples/bpf/bpf_prog.c
+index d6caf374..191a3cea 100644
+--- a/examples/bpf/bpf_prog.c
++++ b/examples/bpf/bpf_prog.c
+@@ -157,8 +157,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <asm/types.h>
+-#include <linux/in.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_ether.h>
+ #include <linux/ip.h>
+ #include <linux/ipv6.h>
+diff --git a/include/linux/if_bonding.h b/include/linux/if_bonding.h
+index 9635a62f..bfd2511c 100644
+--- a/include/linux/if_bonding.h
++++ b/include/linux/if_bonding.h
+@@ -43,7 +43,7 @@
+ #ifndef _LINUX_IF_BONDING_H
+ #define _LINUX_IF_BONDING_H
+ 
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/types.h>
+ #include <linux/if_ether.h>
+ 
 diff --git a/include/linux/if_bridge.h b/include/linux/if_bridge.h
 index 156f4434..a14058c4 100644
 --- a/include/linux/if_bridge.h
@@ -11,26 +51,31 @@ index 156f4434..a14058c4 100644
  #define SYSFS_BRIDGE_ATTR	"bridge"
  #define SYSFS_BRIDGE_FDB	"brforward"
 diff --git a/include/linux/if_tunnel.h b/include/linux/if_tunnel.h
-index 4f975f57..b643b6c6 100644
+index 4f975f57..e85e7069 100644
 --- a/include/linux/if_tunnel.h
 +++ b/include/linux/if_tunnel.h
-@@ -4,7 +4,6 @@
+@@ -2,9 +2,8 @@
+ #define _IF_TUNNEL_H_
+ 
  #include <linux/types.h>
- #include <linux/if.h>
+-#include <linux/if.h>
++#include <net/if.h>
  #include <linux/ip.h>
 -#include <linux/in6.h>
  #include <asm/byteorder.h>
  
  
 diff --git a/include/linux/ip6_tunnel.h b/include/linux/ip6_tunnel.h
-index 425926c4..f0117daf 100644
+index 425926c4..979b6876 100644
 --- a/include/linux/ip6_tunnel.h
 +++ b/include/linux/ip6_tunnel.h
-@@ -3,7 +3,6 @@
+@@ -2,8 +2,7 @@
+ #define _IP6_TUNNEL_H
  
  #include <linux/types.h>
- #include <linux/if.h>		/* For IFNAMSIZ. */
+-#include <linux/if.h>		/* For IFNAMSIZ. */
 -#include <linux/in6.h>		/* For struct in6_addr. */
++#include <net/if.h>		/* For IFNAMSIZ. */
  
  #define IPV6_TLV_TNL_ENCAP_LIMIT 4
  #define IPV6_DEFAULT_TNL_ENCAP_LIMIT 4
@@ -59,20 +104,58 @@ index 8a80007b..c1c85461 100644
  
  #define IPPROTO_L2TP		115
  
+diff --git a/include/linux/netdevice.h b/include/linux/netdevice.h
+index 66fceb44..ad4aab89 100644
+--- a/include/linux/netdevice.h
++++ b/include/linux/netdevice.h
+@@ -25,7 +25,7 @@
+ #ifndef _LINUX_NETDEVICE_H
+ #define _LINUX_NETDEVICE_H
+ 
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_ether.h>
+ #include <linux/if_packet.h>
+ #include <linux/if_link.h>
 diff --git a/include/linux/netfilter.h b/include/linux/netfilter.h
-index ff4a4a52..fac7c0a5 100644
+index ff4a4a52..f314a270 100644
 --- a/include/linux/netfilter.h
 +++ b/include/linux/netfilter.h
-@@ -3,9 +3,6 @@
+@@ -3,8 +3,6 @@
  
  #include <linux/types.h>
  
 -#include <linux/in.h>
 -#include <linux/in6.h>
--
+ 
  /* Responses from hook functions. */
  #define NF_DROP 0
- #define NF_ACCEPT 1
+diff --git a/include/linux/netfilter_ipv4/ip_tables.h b/include/linux/netfilter_ipv4/ip_tables.h
+index 456fb863..f65b25bf 100644
+--- a/include/linux/netfilter_ipv4/ip_tables.h
++++ b/include/linux/netfilter_ipv4/ip_tables.h
+@@ -17,7 +17,7 @@
+ 
+ #include <linux/types.h>
+ 
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/netfilter_ipv4.h>
+ 
+ #include <linux/netfilter/x_tables.h>
+diff --git a/include/linux/netfilter_ipv6/ip6_tables.h b/include/linux/netfilter_ipv6/ip6_tables.h
+index fcc8ccaf..c87adb53 100644
+--- a/include/linux/netfilter_ipv6/ip6_tables.h
++++ b/include/linux/netfilter_ipv6/ip6_tables.h
+@@ -17,7 +17,7 @@
+ 
+ #include <linux/types.h>
+ 
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/netfilter_ipv6.h>
+ 
+ #include <linux/netfilter/x_tables.h>
 diff --git a/include/linux/xfrm.h b/include/linux/xfrm.h
 index d2dd1fd6..8c729669 100644
 --- a/include/linux/xfrm.h
@@ -85,3 +168,237 @@ index d2dd1fd6..8c729669 100644
  #include <linux/types.h>
  
  /* All of the structures in this file may not change size as they are
+diff --git a/ip/ip6tunnel.c b/ip/ip6tunnel.c
+index b4a7def1..3bbbf2cc 100644
+--- a/ip/ip6tunnel.c
++++ b/ip/ip6tunnel.c
+@@ -28,7 +28,7 @@
+ #include <arpa/inet.h>
+ #include <sys/ioctl.h>
+ #include <linux/ip.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_arp.h>
+ #include <linux/if_tunnel.h>
+ #include <linux/ip6_tunnel.h>
+diff --git a/ip/ipl2tp.c b/ip/ipl2tp.c
+index 88664c90..2c050e14 100644
+--- a/ip/ipl2tp.c
++++ b/ip/ipl2tp.c
+@@ -19,7 +19,7 @@
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <sys/ioctl.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_arp.h>
+ #include <linux/ip.h>
+ 
+diff --git a/ip/iplink_hsr.c b/ip/iplink_hsr.c
+index 696b2c91..9b2877d8 100644
+--- a/ip/iplink_hsr.c
++++ b/ip/iplink_hsr.c
+@@ -15,7 +15,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/socket.h>  /* Needed by linux/if.h for some reason */
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_arp.h>
+ #include "rt_names.h"
+ #include "utils.h"
+diff --git a/ip/ipmaddr.c b/ip/ipmaddr.c
+index 4f726fdd..bb8a6d42 100644
+--- a/ip/ipmaddr.c
++++ b/ip/ipmaddr.c
+@@ -22,7 +22,7 @@
+ #include <string.h>
+ 
+ #include <linux/netdevice.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_arp.h>
+ #include <linux/sockios.h>
+ 
+diff --git a/ip/ipmroute.c b/ip/ipmroute.c
+index 84950037..c7f0564d 100644
+--- a/ip/ipmroute.c
++++ b/ip/ipmroute.c
+@@ -23,7 +23,7 @@
+ #include <string.h>
+ 
+ #include <linux/netdevice.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_arp.h>
+ #include <linux/sockios.h>
+ 
+diff --git a/ip/iprule.c b/ip/iprule.c
+index 8313138d..2ef0d8d9 100644
+--- a/ip/iprule.c
++++ b/ip/iprule.c
+@@ -20,7 +20,7 @@
+ #include <netinet/ip.h>
+ #include <arpa/inet.h>
+ #include <string.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/fib_rules.h>
+ #include <errno.h>
+ 
+diff --git a/ip/iptoken.c b/ip/iptoken.c
+index 1869f764..daf2dc66 100644
+--- a/ip/iptoken.c
++++ b/ip/iptoken.c
+@@ -21,7 +21,7 @@
+ #include <netinet/ip.h>
+ #include <arpa/inet.h>
+ #include <linux/types.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ 
+ #include "rt_names.h"
+ #include "utils.h"
+diff --git a/ip/iptuntap.c b/ip/iptuntap.c
+index 451f7f0e..e79d2ca5 100644
+--- a/ip/iptuntap.c
++++ b/ip/iptuntap.c
+@@ -18,7 +18,7 @@
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <sys/ioctl.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_tun.h>
+ #include <pwd.h>
+ #include <grp.h>
+diff --git a/ip/ipvrf.c b/ip/ipvrf.c
+index 0f611b44..e8d610ca 100644
+--- a/ip/ipvrf.c
++++ b/ip/ipvrf.c
+@@ -15,7 +15,7 @@
+ #include <sys/socket.h>
+ #include <sys/mount.h>
+ #include <linux/bpf.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+diff --git a/ip/tcp_metrics.c b/ip/tcp_metrics.c
+index 8972acd0..43b56ff7 100644
+--- a/ip/tcp_metrics.c
++++ b/ip/tcp_metrics.c
+@@ -17,7 +17,7 @@
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <sys/ioctl.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ 
+ #include <linux/genetlink.h>
+ #include <linux/tcp_metrics.h>
+diff --git a/ip/tunnel.c b/ip/tunnel.c
+index 7956d71a..ffe1406b 100644
+--- a/ip/tunnel.c
++++ b/ip/tunnel.c
+@@ -30,7 +30,7 @@
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+ #include <netinet/in.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/ip.h>
+ #include <linux/if_tunnel.h>
+ 
+diff --git a/misc/arpd.c b/misc/arpd.c
+index bfab4454..f393be2b 100644
+--- a/misc/arpd.c
++++ b/misc/arpd.c
+@@ -26,7 +26,7 @@
+ #include <sys/time.h>
+ #include <time.h>
+ #include <signal.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_ether.h>
+ #include <linux/if_arp.h>
+ #include <netinet/in.h>
+diff --git a/misc/ifstat.c b/misc/ifstat.c
+index a853ee6d..f2d35244 100644
+--- a/misc/ifstat.c
++++ b/misc/ifstat.c
+@@ -28,7 +28,7 @@
+ #include <math.h>
+ #include <getopt.h>
+ 
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_link.h>
+ 
+ #include "libnetlink.h"
+diff --git a/tc/f_basic.c b/tc/f_basic.c
+index d663668a..51b1f482 100644
+--- a/tc/f_basic.c
++++ b/tc/f_basic.c
+@@ -19,7 +19,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <string.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ 
+ #include "utils.h"
+ #include "tc_util.h"
+diff --git a/tc/f_fw.c b/tc/f_fw.c
+index 790bef96..83369334 100644
+--- a/tc/f_fw.c
++++ b/tc/f_fw.c
+@@ -19,7 +19,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <string.h>
+-#include <linux/if.h> /* IFNAMSIZ */
++#include <net/if.h> /* IFNAMSIZ */
+ #include "utils.h"
+ #include "tc_util.h"
+ 
+diff --git a/tc/f_matchall.c b/tc/f_matchall.c
+index ac486308..bfc6b8aa 100644
+--- a/tc/f_matchall.c
++++ b/tc/f_matchall.c
+@@ -19,7 +19,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <string.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ 
+ #include "utils.h"
+ #include "tc_util.h"
+diff --git a/tc/f_u32.c b/tc/f_u32.c
+index 92c1fcd4..0dcf0e61 100644
+--- a/tc/f_u32.c
++++ b/tc/f_u32.c
+@@ -20,7 +20,7 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <string.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <linux/if_ether.h>
+ 
+ #include "utils.h"
+diff --git a/testsuite/tools/generate_nlmsg.c b/testsuite/tools/generate_nlmsg.c
+index fe96f262..38d03e12 100644
+--- a/testsuite/tools/generate_nlmsg.c
++++ b/testsuite/tools/generate_nlmsg.c
+@@ -12,7 +12,7 @@
+ #include <netinet/ether.h>
+ #include <libnetlink.h>
+ #include <sys/socket.h>
+-#include <linux/if.h>
++#include <net/if.h>
+ #include <errno.h>
+ #include <stdio.h>
+ 

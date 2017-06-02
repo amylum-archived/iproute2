@@ -5,6 +5,7 @@ licenses 'COPYING'
 
 deps(
   iptables: '1.6.1-5',
+  libmnl: '1.0.4-14',
   'linux-api-headers': '4.11-2'
 )
 
@@ -16,10 +17,11 @@ cflags
 harden
 
 patch '0001-in-in6.patch'
+patch '0002-ethhdr-redefine.patch'
 
 build do
   configure
-  make
+  make "CFLAGS" => "#{@forge.cflags.join(' ')}", "LDFLAGS" => "#{@forge.cflags.join(' ')}"
   install
   run "mv #{releasedir}/sbin #{releasedir}/usr/bin"
 end
