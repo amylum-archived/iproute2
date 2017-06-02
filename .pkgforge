@@ -15,9 +15,7 @@ configure_flags(
 cflags
 harden
 
-patch 'musl-fixes.patch'
-patch '0002-musl-fixes.patch'
-patch '0003-sys-types-include.patch'
+patch '0001-in-in6.patch'
 
 build do
   configure

@@ -1,0 +1,87 @@
+diff --git a/include/linux/if_bridge.h b/include/linux/if_bridge.h
+index 156f4434..a14058c4 100644
+--- a/include/linux/if_bridge.h
++++ b/include/linux/if_bridge.h
+@@ -15,7 +15,6 @@
+ 
+ #include <linux/types.h>
+ #include <linux/if_ether.h>
+-#include <linux/in6.h>
+ 
+ #define SYSFS_BRIDGE_ATTR	"bridge"
+ #define SYSFS_BRIDGE_FDB	"brforward"
+diff --git a/include/linux/if_tunnel.h b/include/linux/if_tunnel.h
+index 4f975f57..b643b6c6 100644
+--- a/include/linux/if_tunnel.h
++++ b/include/linux/if_tunnel.h
+@@ -4,7 +4,6 @@
+ #include <linux/types.h>
+ #include <linux/if.h>
+ #include <linux/ip.h>
+-#include <linux/in6.h>
+ #include <asm/byteorder.h>
+ 
+ 
+diff --git a/include/linux/ip6_tunnel.h b/include/linux/ip6_tunnel.h
+index 425926c4..f0117daf 100644
+--- a/include/linux/ip6_tunnel.h
++++ b/include/linux/ip6_tunnel.h
+@@ -3,7 +3,6 @@
+ 
+ #include <linux/types.h>
+ #include <linux/if.h>		/* For IFNAMSIZ. */
+-#include <linux/in6.h>		/* For struct in6_addr. */
+ 
+ #define IPV6_TLV_TNL_ENCAP_LIMIT 4
+ #define IPV6_DEFAULT_TNL_ENCAP_LIMIT 4
+diff --git a/include/linux/ipv6.h b/include/linux/ipv6.h
+index 26ee549f..6169421f 100644
+--- a/include/linux/ipv6.h
++++ b/include/linux/ipv6.h
+@@ -3,7 +3,6 @@
+ 
+ #include <linux/libc-compat.h>
+ #include <linux/types.h>
+-#include <linux/in6.h>
+ #include <asm/byteorder.h>
+ 
+ /* The latest drafts declared increase in minimal mtu up to 1280. */
+diff --git a/include/linux/l2tp.h b/include/linux/l2tp.h
+index 8a80007b..c1c85461 100644
+--- a/include/linux/l2tp.h
++++ b/include/linux/l2tp.h
+@@ -9,8 +9,6 @@
+ 
+ #include <linux/types.h>
+ #include <linux/socket.h>
+-#include <linux/in.h>
+-#include <linux/in6.h>
+ 
+ #define IPPROTO_L2TP		115
+ 
+diff --git a/include/linux/netfilter.h b/include/linux/netfilter.h
+index ff4a4a52..fac7c0a5 100644
+--- a/include/linux/netfilter.h
++++ b/include/linux/netfilter.h
+@@ -3,9 +3,6 @@
+ 
+ #include <linux/types.h>
+ 
+-#include <linux/in.h>
+-#include <linux/in6.h>
+-
+ /* Responses from hook functions. */
+ #define NF_DROP 0
+ #define NF_ACCEPT 1
+diff --git a/include/linux/xfrm.h b/include/linux/xfrm.h
+index d2dd1fd6..8c729669 100644
+--- a/include/linux/xfrm.h
++++ b/include/linux/xfrm.h
+@@ -1,7 +1,6 @@
+ #ifndef _LINUX_XFRM_H
+ #define _LINUX_XFRM_H
+ 
+-#include <linux/in6.h>
+ #include <linux/types.h>
+ 
+ /* All of the structures in this file may not change size as they are
