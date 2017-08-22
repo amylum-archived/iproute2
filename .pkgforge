@@ -16,8 +16,7 @@ configure_flags(
 cflags
 harden
 
-patch '0001-in-in6.patch'
-patch '0002-ethhdr-redefine.patch'
+patch 'iproute2-4.12.0-musl.patch'
 
 build do
   configure
