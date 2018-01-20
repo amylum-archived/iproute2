@@ -1,6 +1,6 @@
 [submodule "upstream"]
 	path = upstream
-	url = https://github.com/shemminger/iproute2
+	url = https://git.kernel.org/pub/scm/network/iproute2/iproute2.git
 [submodule "meta"]
 	path = meta
 	url = git://github.com/amylum/pkgforge-helper
