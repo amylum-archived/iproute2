@@ -21,8 +21,6 @@ deps(
 cflags
 harden
 
-patch 'iproute2-4.12.0-musl.patch'
-
 build do
   configure
   run "sed 's|IPT_LIB_DIR:=.*|IPT_LIB_DIR:=#{dep(:iptables)}/usr/lib/iptables|' Config"
