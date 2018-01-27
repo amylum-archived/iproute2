@@ -7,7 +7,7 @@ my_slug = pkgforge.org + '/' + pkgforge.name
 item do
   expected do
     url_xpath
-    url 'https://git.kernel.org/pub/scm/linux/kernel/git/shemminger/iproute2.git/refs/tags'
+    url 'https://git.kernel.org/pub/scm/network/iproute2/iproute2.git/refs/tags'
     xpath '//*[@id="cgit"]/div/table/tr[2]/td[1]/a'
     regex /^v([\d.]+)$/
   end
