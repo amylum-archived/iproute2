@@ -23,7 +23,8 @@ harden
 
 build do
   configure
-  run "sed 's|IPT_LIB_DIR:=.*|IPT_LIB_DIR:=#{dep(:iptables)}/usr/lib/iptables|' Config"
+
+  run "sed 's|IPT_LIB_DIR:=.*|IPT_LIB_DIR:=#{dep(:iptables)}/usr/lib/iptables|' config.mk"
   make "CFLAGS" => "#{@forge.cflags.join(' ')}", "LDFLAGS" => "#{@forge.cflags.join(' ')}"
   install
   run "mv #{releasedir}/sbin #{releasedir}/usr/bin"
