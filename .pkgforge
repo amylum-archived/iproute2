@@ -15,10 +15,27 @@ deps(
   'linux-api-headers': {
     version: '4.15-2',
     checksum: 'dbfe68e7620b09fe2996d83fe4ae738dddb2486885b9d5ef3dc27ae77d7585ba'
+  },
+  elfutils: {
+    version: '0.170-1',
+    checksum: '40f22201caecf486b94f908005a57d6feb2627c0ddbbafad3339fa3c480eb3d7'
+  },
+  zlib: {
+    version: '1.2.11-1',
+    checksum: '5596e2d39ef98e2323ac415f50afa71a433ed65c23e8d1f2723f711f5ffb4f32'
+  },
+  fts: {
+    version: '1.2.7-1',
+    checksum: '93b98d9167dd79de2bc47be61617a9c5f9837f4d9a7ffc27e75183cb0a760b63'
+  },
+  obstack: {
+    version: '1.1-1',
+    checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   }
 )
 
 cflags
+cflags(['-lz'])
 harden
 
 build do
