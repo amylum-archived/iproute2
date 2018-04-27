@@ -5,12 +5,12 @@ licenses 'COPYING'
 
 deps(
   iptables: {
-    version: '1.6.2-3',
-    checksum: '30f3cb8e2887664fa743d8db50172307f15a3509a9f6f313879ced60377bf327'
+    version: '1.6.2-4',
+    checksum: '50b0b88613df887b2b6688a09321c073f42883841d0d4d7988b173935be614ca'
   },
   libmnl: {
-    version: '1.0.4-20',
-    checksum: '98a4c42a79f8dee98d45de0e34a8a76c73f118377df1c7c10911bb1858f2fc07'
+    version: '1.0.4-21',
+    checksum: 'e30db51239a7474c361d8d5cfb0e1c983b275e9a104225d048ed6162d07eeb80'
   },
   'linux-api-headers': {
     version: '4.16-1',
