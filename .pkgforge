@@ -33,8 +33,8 @@ deps(
     checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   },
   libcap: {
-    version: '2.25-36',
-    checksum: 'df85adec49b79bea8cf55a7436e0e4328bef039e4f149ed05d9383ae7c838f06'
+    version: '2.25-37',
+    checksum: 'f3c892340ce93e1f561a3526b1e81c18561f4407394975e4a2253f79d6fefb7e'
   }
 )
 
