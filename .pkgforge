@@ -5,16 +5,16 @@ licenses 'COPYING'
 
 deps(
   iptables: {
-    version: '1.6.2-5',
-    checksum: '2f17ca19909b02b2c71985fc3fb421a9bbb2ed0107aa2754961eca13d5a468b5'
+    version: '1.6.2-6',
+    checksum: '34e2f422d2318ae12f51b0cb33fdc0e8891e2e251a6db6c9a7a52ec4bda0ccd7'
   },
   libmnl: {
-    version: '1.0.4-21',
-    checksum: 'e30db51239a7474c361d8d5cfb0e1c983b275e9a104225d048ed6162d07eeb80'
+    version: '1.0.4-22',
+    checksum: 'b7107d73ac741993743b40dea9075e3a070a7a1df6cfd5a83201fb17b48e7d13'
   },
   'linux-api-headers': {
-    version: '4.16-1',
-    checksum: '55af258de8663de5ec97db875651eaeecc209b47454dbbf27757d4de595e618d'
+    version: '4.17-1',
+    checksum: 'b2526797b346c73dc44da02dc16def8eb2059c02bd015f76497e9babadc1a44f'
   },
   elfutils: {
     version: '0.170-1',
@@ -33,8 +33,8 @@ deps(
     checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   },
   libcap: {
-    version: '2.25-37',
-    checksum: 'f3c892340ce93e1f561a3526b1e81c18561f4407394975e4a2253f79d6fefb7e'
+    version: '2.25-38',
+    checksum: '659a88ba1dbfd4532ffb1cdb066aafd95707c03d9473dc6ebc501bdb8b5e7ddc'
   }
 )
 
