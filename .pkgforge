@@ -5,8 +5,8 @@ licenses 'COPYING'
 
 deps(
   iptables: {
-    version: '1.6.2-6',
-    checksum: '34e2f422d2318ae12f51b0cb33fdc0e8891e2e251a6db6c9a7a52ec4bda0ccd7'
+    version: '1.6.2-7',
+    checksum: '6c4b7e78068f698d3093a66ac3afdae4fe7544ee2e3400372f136f4496ca9173'
   },
   libmnl: {
     version: '1.0.4-22',
