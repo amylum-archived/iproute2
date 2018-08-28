@@ -1,7 +1,7 @@
 iproute2
 ==========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/iproute2/master.svg)](https://circleci.com/gh/amylum/iproute2)
+[![Build Status](https://img.shields.io/travis/com/amylum/iproute2.svg)](https://travis-ci.com/amylum/iproute2)
 [![GitHub release](https://img.shields.io/github/release/amylum/iproute2.svg)](https://github.com/amylum/iproute2/releases)
 [![GPL2 Licensed](http://img.shields.io/badge/license-GPL2-green.svg)](https://tldrlegal.com/license/gnu-general-public-license-v2)
 
