@@ -17,12 +17,12 @@ deps(
     checksum: 'edc8dab0e57cb3868867a86d501eb5f314ad00d87e50957c3ffae113ce967298'
   },
   elfutils: {
-    version: '0.173-1',
-    checksum: 'f4a1cb62e0e5df5541e0c6f4173caef096a15fedf1400fb505ef75a564d0e13d'
+    version: '0.173-2',
+    checksum: '2fae1ecbc0763e555d6e016e0a232019e9985b34eea153f240cd33a409ade203'
   },
   zlib: {
-    version: '1.2.11-1',
-    checksum: '5596e2d39ef98e2323ac415f50afa71a433ed65c23e8d1f2723f711f5ffb4f32'
+    version: '1.2.11-6',
+    checksum: '7da7212123edac6d5d5dc2db8fb10a6af06472578840c51e489e1f391b66c208'
   },
   fts: {
     version: '1.2.7-1',
