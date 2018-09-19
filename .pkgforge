@@ -17,8 +17,8 @@ deps(
     checksum: 'edc8dab0e57cb3868867a86d501eb5f314ad00d87e50957c3ffae113ce967298'
   },
   elfutils: {
-    version: '0.173-2',
-    checksum: '2fae1ecbc0763e555d6e016e0a232019e9985b34eea153f240cd33a409ade203'
+    version: '0.174-1',
+    checksum: '3b524e7bca2d5ca7d155f722b2f6bde22fac83177a9f849a74aa38804844b113'
   },
   zlib: {
     version: '1.2.11-6',
