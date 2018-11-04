@@ -9,12 +9,12 @@ deps(
     checksum: 'd9b4ea1a0c58582d7f2e0efc9575afe4ede26ea8c5a00312a50657182ba35f6d'
   },
   libmnl: {
-    version: '1.0.4-23',
-    checksum: 'e090c2e48cb3f572276137f7a892c317b72a7ffb05a706095537b05b84dfdc03'
+    version: '1.0.4-24',
+    checksum: 'c6b5d9e9cb4516fce124f4de5a175f6b6f444e12b6ce49c2203ad096d233002e'
   },
   'linux-api-headers': {
-    version: '4.18-1',
-    checksum: 'edc8dab0e57cb3868867a86d501eb5f314ad00d87e50957c3ffae113ce967298'
+    version: '4.19-1',
+    checksum: 'de68cab17c2354ee660b269ccca30e275a9314563ebdfb4f427fc5ebe1395f30'
   },
   elfutils: {
     version: '0.174-1',
@@ -33,8 +33,8 @@ deps(
     checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   },
   libcap: {
-    version: '2.25-41',
-    checksum: '380d233bf5847d776ff8f40c8d1a493f02675c1c87f16f396b1f061f90d13348'
+    version: '2.25-44',
+    checksum: '4fbd26514144043b6798add7a7ef5261e82f6c346dd66f48d83fbf738e442662'
   }
 )
 
