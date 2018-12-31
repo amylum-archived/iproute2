@@ -13,12 +13,12 @@ deps(
     checksum: 'c6b5d9e9cb4516fce124f4de5a175f6b6f444e12b6ce49c2203ad096d233002e'
   },
   'linux-api-headers': {
-    version: '4.19-1',
-    checksum: 'de68cab17c2354ee660b269ccca30e275a9314563ebdfb4f427fc5ebe1395f30'
+    version: '4.20-1',
+    checksum: 'aed037b2b3fb2df77ca19359a20188d39c25d011febf4d3733d251fa87ca9636'
   },
   elfutils: {
-    version: '0.174-1',
-    checksum: '3b524e7bca2d5ca7d155f722b2f6bde22fac83177a9f849a74aa38804844b113'
+    version: '0.175-1',
+    checksum: '41e8eee773ec34c27b2bf7c0a71d396b2e85dc7bcebbd1d527f91c6b6f54e1ef'
   },
   zlib: {
     version: '1.2.11-6',
