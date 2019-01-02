@@ -9,8 +9,8 @@ deps(
     checksum: 'd9b4ea1a0c58582d7f2e0efc9575afe4ede26ea8c5a00312a50657182ba35f6d'
   },
   libmnl: {
-    version: '1.0.4-24',
-    checksum: 'c6b5d9e9cb4516fce124f4de5a175f6b6f444e12b6ce49c2203ad096d233002e'
+    version: '1.0.4-25',
+    checksum: 'b923bb247733a67b32ca0000f551a76d90132cf2f4192744b9a07b4a7218a766'
   },
   'linux-api-headers': {
     version: '4.20-1',
@@ -33,8 +33,8 @@ deps(
     checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   },
   libcap: {
-    version: '2.25-44',
-    checksum: '4fbd26514144043b6798add7a7ef5261e82f6c346dd66f48d83fbf738e442662'
+    version: '2.25-45',
+    checksum: '053589a5414da5a8e2779c59d84c94d17f51c1b3e857264ce6987ea5f77f7a6b'
   }
 )
 
