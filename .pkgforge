@@ -38,8 +38,6 @@ deps(
   }
 )
 
-patch 'rdma.patch'
-
 cflags
 cflags(%w{-L/usr/lib/musl/lib -lfts -lobstack -lz -lc})
 harden
