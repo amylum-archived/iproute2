@@ -5,20 +5,20 @@ licenses 'COPYING'
 
 deps(
   iptables: {
-    version: '1.8.2-2',
-    checksum: '3071e9097ab6549bc6d9d5d0a82270dd65bd4efec7d64b408a630a7ef675c86e'
+    version: '1.8.2-3',
+    checksum: 'e15319dc73bd7c7acf2b7fecd5a54b912a9047cc0c6341df84d8c923bddb5d56'
   },
   libmnl: {
-    version: '1.0.4-25',
-    checksum: 'b923bb247733a67b32ca0000f551a76d90132cf2f4192744b9a07b4a7218a766'
+    version: '1.0.4-26',
+    checksum: '3749c1571b4e80434f1ce1cfd078ebb757aa2bef6e485b507e6bb3e7a9221b91'
   },
   'linux-api-headers': {
-    version: '4.20-1',
-    checksum: 'aed037b2b3fb2df77ca19359a20188d39c25d011febf4d3733d251fa87ca9636'
+    version: '5.0-1',
+    checksum: '0703e1a5406fea7aa0072034e815fc2b3188151732ec61b134b0e54aa3e752ab'
   },
   elfutils: {
-    version: '0.175-1',
-    checksum: '41e8eee773ec34c27b2bf7c0a71d396b2e85dc7bcebbd1d527f91c6b6f54e1ef'
+    version: '0.176-1',
+    checksum: '69fa4aec5a6ecb74f487cc75224cc7f43045081082c9b57e92d4b6633bc42beb'
   },
   zlib: {
     version: '1.2.11-6',
@@ -33,8 +33,8 @@ deps(
     checksum: 'c399085201ed4583d8f46ef9930cb7b0b5fa1ec513abb34e9d715b249f3231f0'
   },
   libcap: {
-    version: '2.25-48',
-    checksum: '8ed27e983ec8a79665764089d1d2c55cbbb35cdf7ff8a6a60332eac0a4290b54'
+    version: '2.25-49',
+    checksum: '92b9503c53aba0a2b9f7c8ab82ba860a85ee9ffc099eb2b6ed8f1ad58f36ce52'
   }
 )
 
